@@ -49,6 +49,7 @@ const Search = (props) => {
             placeholder='type your location..'
             onChange={handleChange}
             value={inputData?.from}
+            required
           />
           {searchFlag?.from && inputData?.from !== '' && (
             <InputAutoComplete
@@ -66,6 +67,7 @@ const Search = (props) => {
             placeholder='type your location..'
             value={inputData?.to}
             onChange={handleChange}
+            required
           />
           {searchFlag?.to && inputData?.to !== '' && (
             <InputAutoComplete
@@ -86,6 +88,21 @@ const Search = (props) => {
           )}
         </div>
       </form>
+      <div className='bus_error'>
+        {props.error && (
+          <p>
+            {props.error}.{' '}
+            <span>
+              <a
+                href='https://github.com/tnmsnhr/bus-booking-app'
+                target='_blank'
+              >
+                Check valid city list
+              </a>
+            </span>
+          </p>
+        )}
+      </div>
     </div>
   )
 }
@@ -94,6 +111,7 @@ const mapStateToProps = (state) => {
   return {
     cityDetails: state?.cities?.cityDetails,
     isLoading: state?.cities?.loading,
+    error: state?.bus?.error,
     busDetails: state?.bus?.busDetails,
   }
 }

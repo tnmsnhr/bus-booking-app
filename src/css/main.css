@@ -308,7 +308,8 @@ li {
   padding: 4rem;
   border-radius: 15px;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  background-size: cover; }
   .hero_banner--left h1 {
     font-size: 3rem; }
   .hero_banner--left p {
@@ -327,8 +328,15 @@ li {
   padding: 1.5rem;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   position: relative;
   z-index: 2; }
+  .search_component .bus_error {
+    margin-top: 5px;
+    color: red; }
+    .search_component .bus_error span a {
+      color: #1a53e8;
+      text-decoration: underline; }
   .search_component form {
     display: flex;
     align-items: flex-end;
@@ -440,9 +448,12 @@ li {
               font-weight: 500;
               font-size: 0.8rem;
               margin-right: 0.5rem;
-              color: #858585;
+              color: #ffffff;
               letter-spacing: 0.4px;
-              background-color: #e6dfdf; }
+              background-color: #0dc00d; }
+            .search_result-container .search_result--content .search_result--right .top_row .amenities .amenity-item--not-available {
+              background-color: #f4f0f0;
+              color: #a0a0a0; }
         .search_result-container .search_result--content .search_result--right .mid_row {
           display: flex;
           justify-content: space-between;

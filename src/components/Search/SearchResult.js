@@ -67,11 +67,15 @@ const SearchResult = (props) => {
               <ul className='amenities'>
                 {Object.keys(busDetails?.amenities)?.map((el, index) => {
                   return (
-                    busDetails?.amenities[el] && (
-                      <li key={index} className='amenity-item'>
-                        {el}
-                      </li>
-                    )
+                    <li
+                      key={index}
+                      className={`amenity-item ${
+                        busDetails?.amenities[el] &&
+                        'amenity-item--not-available'
+                      }`}
+                    >
+                      {el}
+                    </li>
                   )
                 })}
               </ul>

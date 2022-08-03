@@ -119,9 +119,14 @@
               font-weight: 500;
               font-size: 0.8rem;
               margin-right: 0.5rem;
-              color: $color-grey;
+              color: $color-white;
               letter-spacing: 0.4px;
-              background-color: darken($color-grey-light, 8);
+              background-color: rgb(13, 192, 13);
+              // background-color: darken($color-grey-light, 8);
+            }
+            .amenity-item--not-available {
+              background-color: darken($color-grey-light, 2);
+              color: $color-grey-2;
             }
           }
         }

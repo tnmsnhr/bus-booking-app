@@ -8,9 +8,10 @@ export const fetchBusStart = () => {
     type: actionTypes.FETCH_BUS_START,
   }
 }
-export const fetchBusFailed = () => {
+export const fetchBusFailed = (error) => {
   return {
     type: actionTypes.FETCH_BUS_FAILED,
+    payload: error,
   }
 }
 
@@ -40,48 +41,62 @@ export const bookingSuccess = (bus) => {
 }
 
 export const fetchBusResult = (from, to) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     dispatch(fetchBusStart())
-    const busRef = projectFirestore.collection('bus')
-    const snap = await busRef
-      .where('from', '==', from)
-      .where('to', '==', to)
-      .onSnapshot((snapShot) => {
-        if (snapShot.docs?.length > 0) {
-          const busDetailsArray = []
-          snapShot?.forEach((doc) => {
-            busDetailsArray.push({ ...doc.data(), id: doc.id })
-          })
-          dispatch(fetchBusSuccess(busDetailsArray))
-        } else {
-          busRef.add({
-            to,
-            from,
-            amenities: {
-              food: true,
-              tv: true,
-              washroom: true,
-              wifi: true,
-            },
-            availableCategory: {
-              economy: randomNumGenerator(500, 650),
-              luxury: randomNumGenerator(800, 1100),
-              premium: randomNumGenerator(1200, 1500),
-            },
-            bookingDetails: [],
-            brandName: 'Volvo',
-            driverName: 'Tanmoy Roy',
-            duration: '10:30',
-            seatBooked: 1,
-            seatCapacity: 30,
-            totalStopped: '3',
-            busNumber: 'MH1485-0000',
-            departure: '11:20 AM',
-          })
+    const cityDetails = getState()?.cities?.cityDetails
+    const isCityPresent = cityDetails.filter((el) => {
+      return (
+        el.cityName?.toLowerCase() === from.toLowerCase() ||
+        el.cityName?.toLowerCase() === to.toLowerCase()
+      )
+    })
+    if (isCityPresent?.length > 1) {
+      const busRef = projectFirestore.collection('bus')
+      const snap = await busRef
+        .where('from', '==', from)
+        .where('to', '==', to)
+        .onSnapshot((snapShot) => {
+          if (snapShot.docs?.length > 0) {
+            const busDetailsArray = []
+            snapShot?.forEach((doc) => {
+              busDetailsArray.push({ ...doc.data(), id: doc.id })
+            })
+            dispatch(fetchBusSuccess(busDetailsArray))
+          } else if (from !== '' && to !== '') {
+            busRef.add({
+              to,
+              from,
+              amenities: {
+                food: true,
+                tv: true,
+                washroom: true,
+                wifi: true,
+              },
+              availableCategory: {
+                economy: randomNumGenerator(500, 650),
+                luxury: randomNumGenerator(800, 1100),
+                premium: randomNumGenerator(1200, 1500),
+              },
+              bookingDetails: [],
+              brandName: 'Volvo',
+              driverName: 'Tanmoy Roy',
+              duration: '10:30',
+              seatBooked: 1,
+              seatCapacity: 30,
+              totalStopped: '3',
+              busNumber: 'MH1485-0000',
+              departure: '11:20 AM',
+            })
 
-          dispatch(fetchBusSuccess())
-        }
-      })
+            dispatch(fetchBusSuccess())
+          } else {
+            dispatch(fetchBusFailed('Please enter From,To field'))
+          }
+        })
+    } else {
+      dispatch(fetchBusFailed('Please enter a valid From,To field'))
+    }
+
     // .onSnapshot((snap) => {
     //   const busDetailsArray = []
     //   snap?.forEach((doc) => {

@@ -8,8 +8,19 @@
   padding: 1.5rem;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   position: relative;
   z-index: 2;
+
+  .bus_error {
+    margin-top: 5px;
+    color: red;
+
+    span a {
+      color: $color-blue;
+      text-decoration: underline;
+    }
+  }
 
   form {
     display: flex;
