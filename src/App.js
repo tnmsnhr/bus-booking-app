@@ -70,6 +70,7 @@ function App(props) {
 const mapStateToProps = (state) => {
   return {
     isUserLoggedIn: state?.user?.userLoggedIn,
+    isUserLoading: state?.user?.loading,
     isUserAdmin: state?.user?.userDetails?.isAdmin,
   }
 }

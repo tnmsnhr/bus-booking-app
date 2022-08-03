@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import { changeUserRole, logout } from '../../store/actions/authActions'
 
 const Navbar = (props) => {
-  console.log('navbar rendered')
   return (
     <div className='container'>
       <div className='navbar_container'>

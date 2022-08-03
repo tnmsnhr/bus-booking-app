@@ -149,6 +149,9 @@ export const googleSignIn = () => {
               dispatch(signUpFail(err.message))
             })
         } else {
+          localStorage.setItem('uid', uid)
+          localStorage.setItem('token', refreshToken)
+          localStorage.setItem('name', displayName)
           dispatch(loginSuccess(userData))
         }
       })

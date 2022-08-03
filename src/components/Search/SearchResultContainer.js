@@ -9,20 +9,14 @@ import Notification from '../Notification/Notification'
 const SearchResultContainer = (props) => {
   const { busDetails, onBusBook, busDataLoaded, isBookingInProgress } = props
 
-  const [flag, setFlag] = useState(false)
-
-  useEffect(() => {
-    setFlag(true)
-  }, [props?.bookings.length])
   return (
     <div className='search_result-container'>
-      {flag && <Notification>Ticket booked</Notification>}
       <h2 className='search_result-container--heading'>Search result:</h2>
-      {/* {isBookingInProgress && (
+      {isBookingInProgress && (
         <div className='booking-spinner'>
           <Spinner />
         </div>
-      )} */}
+      )}
       <div>
         {busDataLoaded &&
           busDetails?.map((data) => (
