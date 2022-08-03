@@ -702,7 +702,9 @@ li {
   .booking-list:hover {
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); }
   .booking-list--passanger-name .booking_index {
-    font-size: 0.8rem; }
+    color: #a0a0a0;
+    margin-right: 5px;
+    font-size: 0.9rem; }
   .booking-list--icon {
     color: #1a53e8;
     font-size: 1.5rem;
