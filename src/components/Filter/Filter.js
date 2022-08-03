@@ -30,7 +30,7 @@ const Filter = ({ data, handleFilter }) => {
           const bKey = Object.keys(b.bookingCategory)
           //desc order
           if (
-            a.bookingCategory[aKey[0]] > b.bookingCategory[bKey[0]] &&
+            +a.bookingCategory[aKey[0]] > +b.bookingCategory[bKey[0]] &&
             currentFilter !== 'price'
           )
             return -1
@@ -38,7 +38,7 @@ const Filter = ({ data, handleFilter }) => {
           //asc order
 
           if (
-            a.bookingCategory[aKey[0]] < b.bookingCategory[bKey[0]] &&
+            +a.bookingCategory[aKey[0]] < +b.bookingCategory[bKey[0]] &&
             currentFilter === 'price'
           )
             return -1

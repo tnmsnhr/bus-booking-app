@@ -2,7 +2,10 @@ import React from 'react'
 import { TbCircleCheck } from 'react-icons/tb'
 
 const BookingListItem = (props) => {
-  const { from, to, passangerName, bookingCategory, date } = props?.data
+  const {
+    data: { from, to, passangerName, bookingCategory, date },
+    index,
+  } = props
 
   let bookingCatName, bookingCatPrice
   for (let cat in bookingCategory) {
@@ -17,7 +20,7 @@ const BookingListItem = (props) => {
           {/* <span className='booking-list--icon'>
             <TbCircleCheck />
           </span> */}
-          {passangerName}
+          <span className='booking_index'>{index}.</span> {passangerName}
         </h4>
       </div>
       <div className='booking-list--date'>{date}</div>

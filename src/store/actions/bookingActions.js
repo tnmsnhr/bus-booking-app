@@ -1,6 +1,7 @@
 import firebase from 'firebase'
 import * as actionTypes from '../actions/actionTypes'
 import { projectFirestore } from '../../firebase/config'
+import { randomNumGenerator } from '../../util/randomNumGenerator'
 
 export const fetchBusStart = () => {
   return {
@@ -63,9 +64,9 @@ export const fetchBusResult = (from, to) => {
               wifi: true,
             },
             availableCategory: {
-              economy: 799,
-              luxury: 1399,
-              premium: 1099,
+              economy: randomNumGenerator(500, 650),
+              luxury: randomNumGenerator(800, 1100),
+              premium: randomNumGenerator(1200, 1500),
             },
             bookingDetails: [],
             brandName: 'Volvo',

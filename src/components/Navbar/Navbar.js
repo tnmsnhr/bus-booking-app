@@ -16,14 +16,16 @@ const Navbar = (props) => {
         </section>
         <section className='navbar_right'>
           <ul className='navbar_links'>
-            <li
-              className='navbar_link admin_switch'
-              onClick={() => {
-                props?.onChangeUserRole()
-              }}
-            >
-              {!props?.isAdmin ? 'Make me Admin' : 'Make me User'}
-            </li>
+            {props?.isLoggedIn && (
+              <li
+                className='navbar_link admin_switch'
+                onClick={() => {
+                  props?.onChangeUserRole()
+                }}
+              >
+                {!props?.isAdmin ? 'Make me Admin' : 'Make me User'}
+              </li>
+            )}
             <li className='navbar_link'>
               <NavLink
                 to='/'

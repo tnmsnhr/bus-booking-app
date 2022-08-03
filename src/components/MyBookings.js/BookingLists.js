@@ -20,8 +20,8 @@ const BookingLists = (props) => {
         <Filter handleFilter={handleFilter} data={data} />
       </section>
       <section className='booking-lists--area'>
-        {data?.map((el) => (
-          <BookingListItem key={el.id} data={el} />
+        {data?.map((el, index) => (
+          <BookingListItem key={el.id} data={el} index={index + 1} />
         ))}
       </section>
     </div>
