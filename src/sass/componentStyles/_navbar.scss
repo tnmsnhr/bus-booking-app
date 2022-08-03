@@ -1,0 +1,93 @@
+.navbar_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  .navbar_brand {
+    font-size: 2rem;
+
+    span {
+      color: $color-blue;
+    }
+  }
+
+  .navbar_right {
+    ul {
+      list-style-type: none;
+    }
+
+    li a {
+      text-decoration: none;
+      color: $color-black;
+    }
+    .navbar_links {
+      display: flex;
+      align-items: center;
+
+      .admin_switch {
+        cursor: pointer;
+      }
+
+      .navbar_link:not(.navbar_button) {
+        padding: 0.5rem 1.5rem;
+        font-weight: 500;
+        border-radius: 50px;
+
+        &:hover {
+          background-color: $color-grey-light;
+        }
+      }
+
+      .navbar_button {
+        padding-left: 1rem;
+      }
+
+      .auth_button {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 300px;
+
+        .name_field {
+          font-weight: bold;
+          margin-right: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          span {
+            font-size: 1.2rem;
+            margin-right: 0.4rem;
+            position: relative;
+            top: 5px;
+          }
+        }
+
+        .logout_icon {
+          font-size: 1.2rem;
+          position: relative;
+          top: 2px;
+          margin-left: 0.3rem;
+        }
+
+        .logout_btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+          outline: none;
+          border: none;
+          background: transparent;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $color-grey-light;
+            border-radius: 50px;
+          }
+        }
+      }
+    }
+  }
+}

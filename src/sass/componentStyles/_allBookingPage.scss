@@ -1,0 +1,161 @@
+.my-booking-container {
+  color: $color-black;
+  .my-booking-top-row {
+    width: 100%;
+    background-color: $color-grey-light;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .booking-list-section {
+    background-color: $color-grey-light;
+    border-radius: 15px;
+    padding: 2rem;
+    .my-booking-mid-row {
+      .latest-booking {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0 2rem 0;
+      }
+    }
+
+    .my-booking-bottom-row {
+      display: flex;
+      flex-direction: column;
+
+      .my-booking-list {
+        width: 100%;
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+// booking card
+
+.booking_card {
+  background-color: $color-white;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+  &--destination {
+    h3 {
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+    }
+    span {
+      margin-right: 0.5rem;
+      color: $color-blue;
+    }
+    .destination-icon {
+      font-size: 2rem;
+    }
+  }
+
+  &--price {
+    font-weight: bold;
+    color: $color-grey;
+
+    span {
+      font-weight: bold;
+      font-size: 0.7rem;
+    }
+  }
+
+  &--children-data {
+    font-weight: 500;
+    color: $color-grey-2;
+    font-size: 0.8rem;
+  }
+}
+
+//booking list styles
+
+.booking-lists {
+  width: 100%;
+  &--heading {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &--filter {
+    margin-bottom: 1rem;
+  }
+
+  &--area {
+    width: 100%;
+  }
+}
+
+//booking list item styles
+
+.booking-list {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: darken($color-white, 1);
+  transition: all 0.1s ease-out;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  }
+
+  &--passanger-name {
+  }
+
+  &--icon {
+    color: $color-blue;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  &--date {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: $color-grey-2;
+  }
+
+  &--destination {
+    h5 {
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &--category {
+    overflow: hidden;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    background-color: lighten($color: $color-grey-2, $amount: 15);
+    font-weight: 500;
+    font-size: 1rem;
+
+    & > p {
+      margin: 0 1rem;
+      color: $color-grey;
+    }
+  }
+
+  &--price {
+    padding: 0.3rem 2rem;
+    background-color: $color-blue;
+    color: $color-white;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+}

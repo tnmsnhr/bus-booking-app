@@ -1,0 +1,21 @@
+.filter {
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .filter-item {
+      color: $color-grey-dark;
+      background-color: transparent;
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+
+      .filter-icon {
+        margin-left: 5px;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+}

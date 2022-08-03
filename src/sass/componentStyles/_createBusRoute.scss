@@ -1,0 +1,20 @@
+.create-bus-route {
+  width: 100%;
+  &--heading {
+    margin-bottom: 2rem;
+  }
+
+  &--form-area {
+    width: 100%;
+    .input_group--horizontals {
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+    .duration-input {
+      display: flex;
+
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.hero_banner {
+  width: 100%;
+  height: 85vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 80%
+    ),
+    url('../assets/baloons.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 4rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+
+  &--left {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      padding: 1.5rem 0;
+      width: 70%;
+    }
+    .description {
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+.search_result-container {
+  width: 70vw;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 3rem;
+  background-color: $color-grey-3;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  overflow: hidden;
+
+  .booking-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+
+    &::before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &--heading {
+    border-bottom: 1px solid $color-black;
+  }
+
+  .search_result--content {
+    position: relative;
+
+    .search_result {
+      background-color: $color-white;
+      margin: 0 auto;
+      border-radius: 15px;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+
+      &--left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+        padding-right: 1rem;
+        border-right: 1px solid darken($color-grey-light, 8);
+
+        .book_now-btn {
+          margin: 0.5rem 0;
+        }
+
+        h3 {
+          font-weight: bold;
+        }
+
+        .bus_number {
+          color: $color-grey-2;
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+      }
+
+      &--right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 3.5;
+        padding: 0 1rem 0 1rem;
+
+        .top_row {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          .category_selection {
+            display: flex;
+            .category_item-selected {
+              background-color: $color-blue !important;
+              color: $color-white !important;
+              border: 1px solid $color-blue !important;
+            }
+            .category_item {
+              border: 1px solid darken($color-grey-light, 8);
+              border-radius: 5px;
+              padding: 5px 10px;
+              text-transform: uppercase;
+              font-weight: 500;
+              font-size: 0.8rem;
+              margin-right: 1rem;
+              cursor: pointer;
+              color: $color-grey;
+              letter-spacing: 0.4px;
+
+              &:hover {
+                background-color: $color-grey-light;
+                border: 1px solid $color-grey-light;
+              }
+            }
+          }
+
+          .amenities {
+            display: flex;
+            .amenity-item {
+              border-radius: 5px;
+              padding: 5px 10px;
+              text-transform: uppercase;
+              font-weight: 500;
+              font-size: 0.8rem;
+              margin-right: 0.5rem;
+              color: $color-grey;
+              letter-spacing: 0.4px;
+              background-color: darken($color-grey-light, 8);
+            }
+          }
+        }
+
+        .mid_row {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 1rem 0;
+
+          .destination_guide {
+            display: flex;
+            width: 40%;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: capitalize;
+
+            &--arrow {
+              height: 1px;
+              width: 200px;
+              background-color: $color-grey;
+              margin: 0 1rem;
+              position: relative;
+
+              &::before {
+                content: '';
+                height: 10px;
+                width: 10px;
+                border-right: 1px solid $color-grey;
+                border-top: 1px solid $color-grey;
+                position: absolute;
+                transform: rotate(45deg) translate(24%, 38%);
+                right: 0;
+                bottom: 0;
+              }
+            }
+          }
+        }
+
+        .bottom_row {
+          display: flex;
+          justify-content: flex-start;
+          width: 100%;
+
+          &--info {
+            margin-right: 1rem;
+          }
+          p {
+            font-size: 0.9rem;
+            color: $color-grey-2;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .duration {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    background-color: darken($color-grey-light, 8);
+    height: 70%;
+    transform: translateY(-50%);
+    color: $color-white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 5;
+    width: 2rem;
+
+    .duration-box {
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+      transform-origin: top;
+      font-weight: bold;
+      font-size: 0.8rem;
+      color: $color-grey;
+      writing-mode: tb-rl;
+      padding-left: 5px;
+    }
+    span {
+    }
+  }
+}
