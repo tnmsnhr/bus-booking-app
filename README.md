@@ -9,35 +9,36 @@ live demo: https://bus-booking-1812d.web.app
 
 Valid 30 cities:
 
-| **cityName**      | **state**      |
-|-------------------|----------------|
-| Mumbai            | Maharashtra    |
-| Delhi             | Delhi          |
-| Karnataka         | Bangalore      |
-| Telangana         | Hyderabad      |
-| Ahmedabad         | Gujrat         |
-| Chennai           | Tamil Nadu     |
-| West Bengal       | Kolkata        |
-| Surat             | Gujrat         |
-| Pune              | Maharashtra    |
-| Jaipur            | Rajasthan      |
-| Visakhapatnam     | Adhra Pradesh  |
-| Uttar Pradesh     | Kanpur         |
-| Maharashtra       | Nagpur         |
-| Uttar Pradesh     | Luknow         |
-| Maharashtra       | Thane          |
-| Bhopal            | Madhya Pradesh |
-| Madhya Pradesh    | Indore         |
-| Pimpri\-Chinchwad | Maharashtra    |
-| Patna             | Bihar          |
-| Vadodara          | Gujrat         |
-| Ghaziabad         | Uttar Pradesh  |
-| Ludhiana          | Punjab         |
-| Agra              | Uttar Pradesh  |
-| Nashik            | Maharashtra    |
-| Faridabad         | Haryana        |
-| Uttar Pradesh     | Meerut         |
-| Gujrat            | Rajkot         |
-| Varanasi          | Uttar Pradesh  |
-| West Bengal       | Howrah         |
-| Assam             | Guwahati       |
+| cityName         | state          |
+|------------------|----------------|
+| Mumbai           | Maharashtra    |
+| Delhi            | Delhi          |
+| Bangalore        | Karnataka      |
+| Telangana        | Hyderabad      |
+| Ahmedabad        | Gujrat         |
+| Chennai          | Tamil Nadu     |
+| Kolkata          | West Bengal    |
+| Surat            | Gujrat         |
+| Pune             | Maharashtra    |
+| Jaipur           | Rajasthan      |
+| Visakhapatnam    | Adhra Pradesh  |
+| Kanpur           | Uttar Pradesh  |
+| Nagpur           | Maharashtra    |
+| Luknow           | Uttar Pradesh  |
+| Thane            | Maharashtra    |
+| Bhopal           | Madhya Pradesh |
+| Indore           | Madhya Pradesh |
+| Pimpri-Chinchwad | Maharashtra    |
+| Patna            | Bihar          |
+| Vadodara         | Gujrat         |
+| Ghaziabad        | Uttar Pradesh  |
+| Ludhiana         | Punjab         |
+| Agra             | Uttar Pradesh  |
+| Nashik           | Maharashtra    |
+| Faridabad        | Haryana        |
+| Meerut           | Uttar Pradesh  |
+| Gujrat           | Rajkot         |
+| Varanasi         | Uttar Pradesh  |
+| Howrah           | West Bengal    |
+| Guwahati         | Assam          |
+
