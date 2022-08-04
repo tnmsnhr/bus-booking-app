@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { NavLink, Route, Switch } from 'react-router-dom'
+import { NavLink, Route, Switch, withRouter } from 'react-router-dom'
 import { fetchAdminBooking } from '../../store/actions/bookingActions'
 import BookingLists from '../MyBookings.js/BookingLists'
 import CreateBusRoute from './CreateBusRoute'
@@ -65,4 +65,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminDashBoard)
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(AdminDashBoard)
+)

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
 import { connect } from 'react-redux'
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import './css/main.css'
@@ -7,11 +7,16 @@ import Navbar from './components/Navbar/Navbar'
 import HeroBanner from './components/HeroBanner/HeroBanner'
 import Search from './components/Search/Search'
 import { authCheckState } from './store/actions/authActions'
-import AuthContainer from './components/Auth/AuthContainer'
 import Spinner from './components/Spinner/Spinner'
 import SearchResultContainer from './components/Search/SearchResultContainer'
-import MyBookings from './components/MyBookings.js/MyBookings'
-import AdminDashBoard from './components/Dashboard/AdminDashBoard'
+
+const AuthContainerLazy = lazy(() => import('./components/Auth/AuthContainer'))
+const AdminDashBoardLazy = lazy(() =>
+  import('./components/Dashboard/AdminDashBoard')
+)
+const MyBookingsLazy = lazy(() =>
+  import('./components/MyBookings.js/MyBookings')
+)
 
 function App(props) {
   useEffect(() => {
@@ -25,20 +30,51 @@ function App(props) {
 
   let adminRoute = (
     <>
-      <Route path='/admin' component={AdminDashBoard} />
+      <Route
+        path='/admin'
+        render={() => (
+          <Suspense fallback={<Spinner />}>
+            <AdminDashBoardLazy />
+          </Suspense>
+        )}
+      />
     </>
   )
 
   let commonRoute = !props?.isUserLoggedIn && (
     <>
-      <Route path='/login' exact component={AuthContainer} />
-      <Route path='/signup' exact component={AuthContainer} />
+      <Route
+        path='/login'
+        exact
+        render={() => (
+          <Suspense fallback={<Spinner />}>
+            <AuthContainerLazy />
+          </Suspense>
+        )}
+      />
+      <Route
+        path='/signup'
+        exact
+        render={() => (
+          <Suspense fallback={<Spinner />}>
+            <AuthContainerLazy />
+          </Suspense>
+        )}
+      />
     </>
   )
 
   let userRoute = (
     <>
-      <Route path='/my-bookings' exact component={MyBookings} />
+      <Route
+        path='/my-bookings'
+        exact
+        render={() => (
+          <Suspense fallback={<Spinner />}>
+            <MyBookingsLazy />
+          </Suspense>
+        )}
+      />
       <Route path='/' exact component={Search} />
       <Route path='/' exact component={SearchResultContainer} />
     </>
