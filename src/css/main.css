@@ -34,6 +34,7 @@
 
 html {
   font-size: 16px;
+  margin-left: calc(100vw - 100%);
   scroll-behavior: smooth;
   position: relative; }
 
@@ -254,7 +255,10 @@ li {
     display: flex;
     align-items: center; }
     .navbar_container .navbar_right .navbar_links .admin_switch {
-      cursor: pointer; }
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
     .navbar_container .navbar_right .navbar_links .navbar_link:not(.navbar_button) {
       padding: 0.5rem 1.5rem;
       font-weight: 500;
@@ -812,3 +816,56 @@ li {
       margin-left: 5px;
       position: relative;
       top: 2px; }
+
+.toggle_switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 25px;
+  width: 90px; }
+  .toggle_switch .user_text,
+  .toggle_switch .admin_text {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #ffffff; }
+  .toggle_switch .user_text {
+    right: 10px; }
+  .toggle_switch .admin_text {
+    left: 10px; }
+  .toggle_switch input[type='checkbox'] {
+    height: 0;
+    width: 0;
+    visibility: hidden; }
+  .toggle_switch label {
+    cursor: pointer;
+    width: 90px;
+    height: 25px;
+    background: #313131;
+    display: block;
+    border-radius: 100px;
+    position: relative; }
+    .toggle_switch label p {
+      position: absolute; }
+  .toggle_switch label:after {
+    content: '';
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s; }
+  .toggle_switch input:checked + label {
+    background: #1a53e8; }
+  .toggle_switch input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%); }
+  .toggle_switch label:active:after {
+    width: 130px; }
+  .toggle_switch body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; }

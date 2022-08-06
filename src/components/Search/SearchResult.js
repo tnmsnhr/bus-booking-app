@@ -70,7 +70,7 @@ const SearchResult = (props) => {
                     <li
                       key={index}
                       className={`amenity-item ${
-                        busDetails?.amenities[el] &&
+                        !busDetails?.amenities[el] &&
                         'amenity-item--not-available'
                       }`}
                     >
