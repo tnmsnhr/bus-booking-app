@@ -4,6 +4,7 @@ import { RiLogoutCircleRLine } from 'react-icons/ri'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { changeUserRole, logout } from '../../store/actions/authActions'
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch'
 
 const Navbar = (props) => {
   return (
@@ -18,12 +19,15 @@ const Navbar = (props) => {
           <ul className='navbar_links'>
             {props?.isLoggedIn && (
               <li
-                className='navbar_link admin_switch'
+                className=' admin_switch'
                 onClick={() => {
                   props?.onChangeUserRole()
                 }}
               >
-                {!props?.isAdmin ? 'Make me Admin' : 'Make me User'}
+                {/* {!props?.isAdmin ? 'Admin' : 'User'} */}
+                <div>
+                  <ToggleSwitch text={props?.isAdmin ? 'admin' : 'user'} />
+                </div>
               </li>
             )}
             <li className='navbar_link'>
