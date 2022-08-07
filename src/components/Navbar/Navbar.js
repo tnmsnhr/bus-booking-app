@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BsFillEmojiLaughingFill } from 'react-icons/bs'
 import { RiLogoutCircleRLine } from 'react-icons/ri'
 import { NavLink } from 'react-router-dom'
@@ -7,6 +7,15 @@ import { changeUserRole, logout } from '../../store/actions/authActions'
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch'
 
 const Navbar = (props) => {
+  const [showClass, setShowClass] = useState('')
+
+  const handleToggle = (e) => {
+    if (!showClass) {
+      setShowClass('toggle_navbar')
+    } else {
+      setShowClass('')
+    }
+  }
   return (
     <div className='container'>
       <div className='navbar_container'>
@@ -16,7 +25,15 @@ const Navbar = (props) => {
           </h3>
         </section>
         <section className='navbar_right'>
-          <ul className='navbar_links'>
+          <section className='navbar_toggle'>
+            <input type='checkbox' id='toggle_input' onChange={handleToggle} />
+            <label htmlFor='toggle_input'>
+              <span className='navbar_toggle-switch'> </span>
+              <span className='navbar_toggle-switch'> </span>
+              <span className='navbar_toggle-switch'> </span>
+            </label>
+          </section>
+          <ul className={`navbar_links ${showClass}`}>
             {props?.isLoggedIn && (
               <li
                 className=' admin_switch'

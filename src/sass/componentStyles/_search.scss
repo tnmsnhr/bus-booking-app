@@ -12,6 +12,10 @@
   position: relative;
   z-index: 2;
 
+  @include respond(tab-land) {
+    width: 80vw;
+  }
+
   .bus_error {
     margin-top: 5px;
     color: red;
