@@ -8,6 +8,10 @@
   border-radius: 15px;
   overflow: hidden;
 
+  @include respond(tab-land) {
+    width: 80vw;
+  }
+
   .booking-spinner {
     position: absolute;
     top: 50%;
@@ -47,6 +51,10 @@
       z-index: 1;
       margin-top: 2rem;
 
+      @include respond(tab-land) {
+        padding: 2.5rem 1.5rem;
+      }
+
       &--left {
         display: flex;
         flex-direction: column;
@@ -58,6 +66,14 @@
 
         .book_now-btn {
           margin: 0.5rem 0;
+
+          @include respond(tab-land) {
+            padding: 1rem;
+          }
+        }
+
+        @include respond(tab-land) {
+          padding-right: 0rem;
         }
 
         h3 {
@@ -107,6 +123,11 @@
                 background-color: $color-grey-light;
                 border: 1px solid $color-grey-light;
               }
+
+              @include respond(tab-land) {
+                font-size: 0.65rem;
+                margin-right: 0.5rem;
+              }
             }
           }
 
@@ -123,6 +144,11 @@
               letter-spacing: 0.4px;
               background-color: rgb(13, 192, 13);
               // background-color: darken($color-grey-light, 8);
+
+              @include respond(tab-land) {
+                font-size: 0.65rem;
+                margin-right: 0.3rem;
+              }
             }
             .amenity-item--not-available {
               background-color: darken($color-grey-light, 2);
@@ -170,6 +196,11 @@
           display: flex;
           justify-content: flex-start;
           width: 100%;
+
+          @include respond(tab-land) {
+            position: absolute;
+            bottom: 10px;
+          }
 
           &--info {
             margin-right: 1rem;

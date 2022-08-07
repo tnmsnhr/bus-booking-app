@@ -86,13 +86,6 @@ const SearchResult = (props) => {
                 <span className='destination_guide--arrow'></span>
                 <h2>{busDetails?.to}</h2>
               </div>
-              {/* <div className='duration'>
-                <h2 className='duration-box '>
-                  {busDetails?.duration?.split(':')[0]}
-                  <span>H </span> {busDetails?.duration?.split(':')[1] ?? '00'}
-                  <span>M</span>
-                </h2>
-              </div> */}
             </div>
             <div className='bottom_row'>
               <div className='bottom_row--info'>

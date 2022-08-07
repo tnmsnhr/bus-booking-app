@@ -15,6 +15,10 @@
   align-items: center;
   background-size: cover;
 
+  @include respond(tab-land) {
+    height: 70vh;
+  }
+
   &--left {
     h1 {
       font-size: 3rem;

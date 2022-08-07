@@ -68,6 +68,14 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include respond(big-phone) {
+      width: 30%;
+    }
+
+    @include respond(phone) {
+      width: 5%;
+    }
   }
 }
 
